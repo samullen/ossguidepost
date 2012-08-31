@@ -1,7 +1,12 @@
 Given /^I do not have an account$/ do
 end
 
-When /^I sign up (?:with|through) GitHub$/ do
+Given /^I have an account$/ do
+  @current_user = FactoryGirl.create :user
+  authentication = FactoryGirl.create :authentication, :user => @current_user
+end
+
+When /^I sign (?:up|in) (?:with|through) GitHub$/ do
   find(:link, "github-authentication").click
 end
 
