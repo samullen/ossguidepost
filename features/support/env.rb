@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require_relative '../../spec/support/github_auth'
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
 # order to ease the transition to Capybara we set the default here. If you'd
@@ -57,3 +58,5 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+OmniAuth.config.test_mode = true
+OmniAuth.config.add_mock(:github, GithubAuth::auth)

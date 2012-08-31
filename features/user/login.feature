@@ -7,9 +7,9 @@ Feature: Logging in
   Scenario: Creating an account with GitHub
     Given I do not have an account
       And I am on the root page
-     When I sign in with GitHub
+     When I sign up with GitHub
      Then I should be on the root page
-      And I should be signed in through GitHub
+      And my account should be created
 
   Scenario: Signing in with GitHub
     Given I have an account linked to my GitHub account
