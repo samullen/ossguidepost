@@ -5,8 +5,10 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'pg', "~> 0.14.0"
 
+gem 'devise', "~> 2.1.2"
+gem 'simple_form', '~> 2.0.2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,3 +38,18 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :development, :test do
+  gem 'minitest-rails', '~> 0.1.3'
+end
+
+group :test do
+  gem "spin", "~> 0.4.5"
+  gem "guard-spin", "~> 0.3.0"
+  gem "database_cleaner"
+  gem "cucumber-rails", "~> 1.3.0"
+  gem "rb-fsevent"
+  gem 'shoulda-matchers'
+  gem "launchy", "~> 2.1.2"
+  gem 'simplecov', "~> 0.6.4", :require => false
+end
