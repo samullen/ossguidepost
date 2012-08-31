@@ -9,6 +9,7 @@ gem 'pg', "~> 0.14.0"
 
 gem 'devise', "~> 2.1.2"
 gem 'simple_form', '~> 2.0.2'
+gem 'omniauth-github', '~> 1.0.3'
 
 # Gems used only for assets and not required
 # in production environments by default.
