@@ -9,6 +9,7 @@ gem 'pg', "~> 0.14.0"
 
 gem 'devise', "~> 2.1.2"
 gem 'simple_form', '~> 2.0.2'
+gem 'omniauth-github', '~> 1.0.3'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,7 +41,8 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :development, :test do
-  gem 'minitest-rails', '~> 0.1.3'
+  gem 'rspec-rails', '~> 2.11.0'
+  gem 'factory_girl_rails', '~> 4.0.0'
 end
 
 group :test do
@@ -48,6 +50,7 @@ group :test do
   gem "guard-spin", "~> 0.3.0"
   gem "database_cleaner"
   gem "cucumber-rails", "~> 1.3.0"
+  gem "fakeweb"
   gem "rb-fsevent"
   gem 'shoulda-matchers'
   gem "launchy", "~> 2.1.2"
