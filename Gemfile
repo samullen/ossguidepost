@@ -40,7 +40,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :development, :test do
-  gem 'minitest-rails', '~> 0.1.3'
+  gem 'rspec-rails', '~> 2.11.0'
 end
 
 group :test do
@@ -48,6 +48,7 @@ group :test do
   gem "guard-spin", "~> 0.3.0"
   gem "database_cleaner"
   gem "cucumber-rails", "~> 1.3.0"
+  gem "fakeweb"
   gem "rb-fsevent"
   gem 'shoulda-matchers'
   gem "launchy", "~> 2.1.2"
