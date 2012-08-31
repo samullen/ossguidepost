@@ -25,3 +25,6 @@ RSpec.configure do |config|
 
   config.order = "random"
 end
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.add_mock(:github, GithubAuth::auth)
