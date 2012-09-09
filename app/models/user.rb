@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email
 
   has_many :authentications, :dependent => :destroy
+  has_many :projects, :dependent => :destroy
 
   def self.create_with_omniauth(auth)  
     user_info  = auth["info"]
