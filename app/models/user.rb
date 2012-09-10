@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  delegate :name, :to => :github_auth, :prefix => :github, :allow_nil => true
+  delegate :username, :to => :github_auth, :prefix => :github, :allow_nil => true
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
       user.authentications << Authentication.new(
         :provider => auth['provider'], 
         :uid => auth['uid'],
+        :username => user_info['nickname'],
         :token => auth["credentials"]["token"]
       )
     end  
