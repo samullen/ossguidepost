@@ -6,6 +6,7 @@ describe User do
   describe "Associations" do
     it { should have_many(:authentications).dependent(:destroy) }
     it { should have_many(:projects).dependent(:destroy) }
+    it { should have_one(:github_auth) }
   end
 
 #   describe "Validations" do
