@@ -3,7 +3,6 @@ Ossguidepost::Application.routes.draw do
 
   resources :users, :only => [:show, :edit, :update]
 
-  match "projects/import" => "projects#import", :as => :project_import
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
