@@ -15,10 +15,5 @@ describe Import do
       projects = Import.github_import("username") {|repo| repo}
       projects.should_not be_empty
     end
-
-    it "skips private repos" do
-      projects = Import.github_import("username") {|repo| repo}
-      projects.any? {|project| project.name == "wordsearch" }.should be_false
-    end
   end
 end

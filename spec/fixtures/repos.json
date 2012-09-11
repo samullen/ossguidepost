@@ -510,7 +510,7 @@
     "name": "wordsearch",
     "url": "https://api.github.com/repos/samullen/wordsearch",
     "ssh_url": "git@github.com:samullen/wordsearch.git",
-    "private": true,
+    "private": false,
     "id": 724055,
     "language": "Ruby",
     "homepage": "",
