@@ -14,6 +14,7 @@ module GithubAuth
           "Blog" => "http://blog.example.com",
           "Example" => "http://example.com",
         },
+        "nickname" => "example_username"
       },
       "credentials" => {
         "token" => "987987987987"

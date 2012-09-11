@@ -11,6 +11,6 @@ class GithubImportsController < ApplicationController
       )
     end
 
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), :notice => "Your github repositories have been imported."
   end
 end

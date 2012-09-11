@@ -3,7 +3,6 @@ end
 
 Given /^I have an account$/ do
   @current_user = FactoryGirl.create :user
-  authentication = FactoryGirl.create :authentication, :user => @current_user
 end
 
 Given /^I am signed in through GitHub$/ do
