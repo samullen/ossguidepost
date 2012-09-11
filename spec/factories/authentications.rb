@@ -7,4 +7,8 @@ FactoryGirl.define do
     uid "313159"
     token "1235813213455"
   end
+
+  factory :github_authentication, :parent => :authentication do
+    username "example_username"
+  end
 end

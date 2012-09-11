@@ -1,6 +1,10 @@
 Ossguidepost::Application.routes.draw do
   devise_for :user, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  resources :users, :only => [:show, :edit, :update]
+  resources :github_imports, :only => [:create]
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

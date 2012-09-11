@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Sign in with GitHub", user_omniauth_authorize_path(:github), :rel => "github-authentication" %>
+  <% if user_signed_in? %>
+    <%= link_to_if user_signed_in?, "My Profile", user_path(current_user), :rel => "my_profile-show" %>
+  <% else %>
+    <%= link_to "Sign in with GitHub", user_omniauth_authorize_path(:github), :rel => "github-authentication" %>
+  <% end %>
+
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

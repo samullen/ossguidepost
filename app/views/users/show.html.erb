@@ -1,0 +1,21 @@
+<%= link_to("GitHub Import", github_imports_path, :method => :post, :rel => "github-import") %>
+
+<% if @projects.present? %>
+  <table class='projects-list'>
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Last Updated</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.name %></td>
+          <td><%= project.updated_at.to_s(:short) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

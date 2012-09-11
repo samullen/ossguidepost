@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  delegate :username, :to => :github_auth, :prefix => :github, :allow_nil => true
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -8,6 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :email
 
   has_many :authentications, :dependent => :destroy
+    has_one :github_auth, :class_name => "Authentication", 
+      :conditions => {:provider => "github"}
+  has_many :projects, :dependent => :destroy
 
   def self.create_with_omniauth(auth)  
     user_info  = auth["info"]
@@ -19,6 +23,7 @@ class User < ActiveRecord::Base
       user.authentications << Authentication.new(
         :provider => auth['provider'], 
         :uid => auth['uid'],
+        :username => user_info['nickname'],
         :token => auth["credentials"]["token"]
       )
     end  
