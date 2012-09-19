@@ -1,3 +1,8 @@
+Given /^there is a User with a Project$/ do
+  user = FactoryGirl.create :user
+  project = FactoryGirl.create :project, :user => user
+end
+
 When /^I import my GitHub Projects$/ do
   find(:link, "github-import").click
 end
