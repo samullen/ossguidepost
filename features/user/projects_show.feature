@@ -6,5 +6,5 @@ Feature: Displaying a project page
   Scenario: Displaying the project's page
     Given there is a User with a Project
       And I am on the User's Project page
-     Then the Project page should display successfully
+     Then the page should load successfully
    
