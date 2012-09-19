@@ -3,6 +3,7 @@ Ossguidepost::Application.routes.draw do
 
   resources :users, :only => [:show, :edit, :update] do
     match ":id" => "projects#show", :as => :project
+#     match ":id/edit" => "projects#edit", :as => "edit_user_project"
   end
 
   resources :github_imports, :only => [:create]
