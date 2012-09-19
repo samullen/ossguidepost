@@ -2,7 +2,7 @@ Ossguidepost::Application.routes.draw do
   devise_for :user, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :users, :only => [:show, :edit, :update] do
-    resources :project 
+    match ":id" => "projects#show", :as => :project
   end
 
   resources :github_imports, :only => [:create]
