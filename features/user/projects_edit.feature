@@ -4,9 +4,9 @@ Feature: Editing a project
   wants to update a project with more complete information
 
   Scenario: Successful editing of a project
-    Given I am signed in as a User
+    Given I am signed in through GitHub
       And I have a Project
-     When I navigate to edit the Project
-      And I update the Project
+      And I am on my Project's edit page
+     When I update the Project
      Then I should be on the Project page
       And I should see a successful Project update message
