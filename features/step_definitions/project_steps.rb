@@ -1,5 +1,19 @@
+Given /^there is a User with a Project$/ do
+  user = FactoryGirl.create :user
+  @project = FactoryGirl.create :project, :user => user
+end
+
+Given /^I have a Project$/ do
+  @current_user ||= User.first
+  @project = FactoryGirl.create :project, :user => @current_user
+end
+
 When /^I import my GitHub Projects$/ do
   find(:link, "github-import").click
+end
+
+When /^I update the Project$/ do
+  click_button "Update Project"
 end
 
 Then /^I should see a successful import message$/ do
@@ -8,4 +22,8 @@ end
 
 Then /^I should see my Projects listed on my Profile$/ do
   all("table.projects-list > tbody > tr").size.should == 14 
+end
+
+Then /^I should see a successful Project update message$/ do
+  page.should have_content "Project was successfully updated."
 end

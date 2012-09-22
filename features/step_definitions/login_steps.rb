@@ -6,7 +6,6 @@ Given /^I have an account$/ do
 end
 
 Given /^I am signed in through GitHub$/ do
-  step "I have an account"
   visit root_path
   step "I sign in with GitHub"
 end
