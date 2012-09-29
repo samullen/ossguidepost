@@ -8,6 +8,14 @@ Given /^I have a Project$/ do
   @project = FactoryGirl.create :project, :user => @current_user
 end
 
+Given /^there are (\d+) "(.*?)" projets scored below (\d+)$/ do |qty, language, score|
+  user = FactoryGirl.create :user
+
+  qty.to_i.times do |i|
+    FactoryGirl.create :project, :name => "Example Project #{i}", :user => user, :language => language, :score => rand(score.to_i) + 1
+  end
+end
+
 When /^I import my GitHub Projects$/ do
   find(:link, "github-import").click
 end
