@@ -1,0 +1,12 @@
+<%= simple_form_for :search, :url => search_path do |f| %>
+  <%= f.input :q, :label => "Search" %>
+  <br/>
+
+  <%= f.input :language %>
+  <br/>
+
+  <%= f.input :difficulty, :collection => @difficulties %>
+  <br/>
+
+  <%= f.submit "Search" %>
+<% end %>
