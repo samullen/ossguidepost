@@ -5,5 +5,6 @@ Feature: Search
 
   Scenario: Basic search
     Given there are 15 "ruby" projets scored below 4
+      And I am on the home page
      When I search for difficulty 3 "ruby" projects
      Then I should see 10 search results
