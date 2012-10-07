@@ -8,11 +8,12 @@ Given /^I have a Project$/ do
   @project = FactoryGirl.create :project, :user => @current_user
 end
 
-Given /^there are (\d+) "(.*?)" projets scored below (\d+)$/ do |qty, language, score|
+Given /^there are (\d+) "(.*?)" projects with difficulty below (\d+)$/ do |qty, language, difficulty|
   user = FactoryGirl.create :user
+  difficulty = difficulty.to_i - 1
 
   qty.to_i.times do |i|
-    FactoryGirl.create :project, :name => "Example Project #{i}", :user => user, :language => language, :score => rand(score.to_i) + 1
+    FactoryGirl.create :project, :name => "Example Project #{i}", :user => user, :language => language, :difficulty => rand(difficulty) + 1
   end
 end
 

@@ -10,3 +10,17 @@
 
   <%= f.submit "Search" %>
 <% end %>
+
+<% if @projects.present? %>
+  <div id="search_results">
+    <h2>Search Results</h2>
+
+    <% @projects.each do |project| %>
+      <div class="search_result">
+        <%= link_to project.name, project_path(project), :rel => "project-view" %>
+        <%= project.description %>
+        <%= project.difficulty %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
