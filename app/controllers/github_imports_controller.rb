@@ -7,7 +7,7 @@ class GithubImportsController < ApplicationController
         :description => repo.description || "unknown",
         :git_url => repo.git_url || "unknown",
         :homepage => repo.homepage || "unknown",
-        :language => repo.language || "unknown"
+        :language => repo.language.downcase || "unknown"
       )
     end
 

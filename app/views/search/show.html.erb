@@ -1,0 +1,28 @@
+<%= simple_form_for :search, :url => search_path do |f| %>
+  <%= f.input :q, :label => "Search", :required => false %>
+  <br/>
+
+  <%= f.input :language, :required => false %>
+  <br/>
+
+  <%= f.input :difficulty, :collection => @difficulties, :required => false %>
+  <br/>
+
+  <%= f.submit "Search" %>
+<% end %>
+
+<% if @projects.present? %>
+  <div id="search_results">
+    <h2>Search Results</h2>
+
+    <%= paginate @projects %>
+    <% @projects.each do |project| %>
+      <div class="search_result">
+        <%= link_to project.name, project_path(project), :rel => "project-view" %>
+        <%= project.description %>
+        <%= project.difficulty %>
+      </div>
+    <% end %>
+    <%= paginate @projects %>
+  </div>
+<% end %>

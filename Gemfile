@@ -12,6 +12,8 @@ gem 'simple_form', '~> 2.0.2'
 gem 'omniauth-github', '~> 1.0.3'
 
 gem 'octokit', '~> 1.13.0'
+gem "texticle", "~> 2.0.3", :require => 'texticle/rails'
+gem "kaminari", "~> 0.14.1"
 
 # Gems used only for assets and not required
 # in production environments by default.
