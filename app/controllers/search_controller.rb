@@ -1,5 +1,7 @@
 class SearchController < ApplicationController
   def show
+    search = params[:search]
+
     @difficulties = [
       ["1 - Beginner", 1],
       ["2 - Novice", 2],
@@ -8,12 +10,13 @@ class SearchController < ApplicationController
       ["5 - Master", 5],
     ]
 
-    if params[:search].present?
-      @projects = Project.where(:language => params[:search][:language])
-      @projects = @projects.where("difficulty <= ?", params[:search][:difficulty])
-      @projects = @projects.search(params[:search][:q])
+    if search.present?
+      @projects = Project.where(:language => search[:language])
+      @projects = @projects.where("difficulty <= ?", search[:difficulty].to_i)
+      @projects = @projects.search(search[:q]) if search[:q].present?
+      @projects = @projects.page(params[:page]).per(10)
 
-      p @projects
+      logger.info @projects.inspect
     end
   end
 end
