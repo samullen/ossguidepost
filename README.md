@@ -1,6 +1,6 @@
 # OSS Guidepost
 
-Lowering Open Source Development's Barrier to Entry
+Helping those who want to give back to the OSS community find a place to contribute
 
 ## The Goal
 
