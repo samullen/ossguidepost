@@ -17,7 +17,7 @@ describe Import do
     end
   end
 
-  describe "update_from_origin", :focus do
+  describe "update_from_origin" do
     it "updates a project from it's origin" do
       project = FactoryGirl.create :project, :name => "ossguidepost", :full_name => "samullen/ossguidepost", :description => "Example description"
 
