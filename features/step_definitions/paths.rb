@@ -4,10 +4,17 @@ Given /^I am on (.+)$/ do |page|
   when /the (?:root|home) page/
     visit root_path
 
+  # Projects
+
   when /the User's Project page/
     @project ||= Project.last
     user = @project.user
     visit user_project_path(user, @project)
+
+  when /my Project's page/
+    @current_user ||= User.first
+    @project ||= Project.last
+    visit user_project_path(@current_user, @project)
 
   when /my Project's edit page/
     @current_user ||= User.first

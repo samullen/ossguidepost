@@ -25,6 +25,10 @@ When /^I update the Project$/ do
   click_button "Update Project"
 end
 
+When /^I update the Project from origin$/ do
+  find(:link, "project-origin_update").click
+end
+
 Then /^I should see a successful import message$/ do
   page.should have_content "Your github repositories have been imported."
 end
