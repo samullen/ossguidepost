@@ -8,7 +8,7 @@ Ossguidepost::Application.routes.draw do
   end
 
   resources :projects, :only => :update
-  resources :project_updates, :only => :post
+  resources :project_updates, :only => :update
 
   resources :github_imports, :only => [:create]
 

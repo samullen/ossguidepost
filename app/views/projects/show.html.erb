@@ -13,6 +13,8 @@
 
 </dl>
 
+<%= link_to "Update from Origin", project_update_path(@project.id), :rel => "project-origin_update", :method => :put %>
+
 <!-- Put a big box to the right with the difficulty in it. Really Big!! -->
 <div>
   <%= @project.difficulty %>

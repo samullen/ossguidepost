@@ -6,4 +6,7 @@ FactoryGirl.define do
     name "example_project"
     full_name "username/example_project"
   end
+
+#   factory :github_project, :parent => :project do
+#   end
 end
