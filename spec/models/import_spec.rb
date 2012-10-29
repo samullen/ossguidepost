@@ -16,4 +16,13 @@ describe Import do
       projects.should_not be_empty
     end
   end
+
+  describe "update_from_origin", :focus do
+    it "updates a project from it's origin" do
+      project = FactoryGirl.create :project, :name => "ossguidepost", :full_name => "samullen/ossguidepost", :description => "Example description"
+
+      Import.update_from_origin(project).should be_true
+      project.description.should_not eql("Example description")
+    end
+  end
 end
