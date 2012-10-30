@@ -3,8 +3,8 @@
 FactoryGirl.define do
   factory :project do
     user_id 1001
-    name "example_project"
-    full_name "username/example_project"
+    sequence(:name) {|i| "example_project#{i}"}
+    sequence(:full_name) {|i| "username/example_project#{i}" }
   end
 
 #   factory :github_project, :parent => :project do

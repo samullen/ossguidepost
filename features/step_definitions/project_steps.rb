@@ -13,7 +13,7 @@ Given /^there are (\d+) "(.*?)" projects with difficulty below (\d+)$/ do |qty, 
   difficulty = difficulty.to_i - 1
 
   qty.to_i.times do |i|
-    FactoryGirl.create :project, :name => "Example Project #{i}", :user => user, :language => language, :difficulty => rand(difficulty) + 1
+    FactoryGirl.create :project, :user => user, :language => language, :difficulty => rand(difficulty) + 1
   end
 end
 
