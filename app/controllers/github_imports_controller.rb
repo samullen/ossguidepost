@@ -1,7 +1,7 @@
 class GithubImportsController < ApplicationController
   def create
     Import.github_import(current_user.github_username) do |repo|
-      current_user.projects.create(
+      current_user.projects.find_or_create_by_full_name(repo.full_name, 
         :name => repo.name || "unknown",
         :full_name => repo.full_name || "unknown",
         :description => repo.description || "unknown",

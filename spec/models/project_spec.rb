@@ -15,6 +15,7 @@ describe Project do
     it { should validate_presence_of :full_name }
     it { should ensure_length_of(:full_name).is_at_most(128) }
     it { should validate_presence_of :full_name }
+    it { should validate_uniqueness_of(:full_name).scoped_to(:user_id) }
     it { should ensure_length_of(:language).is_at_most(32) }
   end
 end
