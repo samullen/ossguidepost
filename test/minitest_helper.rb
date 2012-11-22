@@ -8,7 +8,9 @@ require "minitest/rails"
 # require "minitest/rails/capybara"
 
 # Uncomment if you want awesome colorful output
-# require "minitest/pride"
+require "minitest/pride"
+
+Dir[Rails.root.join("test/support/**/*.rb")].each {|f| require f}
 
 class MiniTest::Rails::ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
