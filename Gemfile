@@ -45,15 +45,16 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.11.0'
+#   gem 'rspec-rails', '~> 2.11.0'
   gem 'factory_girl_rails', '~> 4.0.0'
+  gem 'minitest-rails', '~> 0.3.0'
 end
 
 group :test do
-  gem "spin", "~> 0.4.5"
-  gem "guard-spin", "~> 0.3.0"
+#   gem "spin", "~> 0.4.5"
+#   gem "guard-spin", "~> 0.3.0"
   gem "database_cleaner"
-  gem "cucumber-rails", "~> 1.3.0"
+#   gem "cucumber-rails", "~> 1.3.0"
   gem "fakeweb"
   gem "rb-fsevent"
   gem 'shoulda-matchers'
