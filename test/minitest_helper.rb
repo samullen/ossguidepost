@@ -12,12 +12,21 @@ require "minitest/pride"
 
 Dir[Rails.root.join("test/support/**/*.rb")].each {|f| require f}
 
-class MiniTest::Rails::ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-#   fixtures :all
+DatabaseCleaner.clean_with :truncation
 
-  # Add more helper methods to be used by all tests here...
+class MiniTest::Rails::ActiveSupport::TestCase
+#   before :each do
+#     DatabaseCleaner.start
+#   end
+#   after :each do
+#     DatabaseCleaner.clean
+#   end
 end
+
+FakeWeb.allow_net_connect = false
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.add_mock(:github, GithubAuth::auth)
 
 # Do you want all existing Rails tests to use MiniTest::Rails?
 # Comment out the following and either:
