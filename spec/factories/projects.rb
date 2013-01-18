@@ -7,6 +7,9 @@ FactoryGirl.define do
     sequence(:full_name) {|i| "username/example_project#{i}" }
   end
 
+  factory :unmaintained_project, :parent => :project do
+    seeking_maintainer_since Time.now
+  end
 #   factory :github_project, :parent => :project do
 #   end
 end

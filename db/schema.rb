@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007014035) do
+ActiveRecord::Schema.define(:version => 20130118170235) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -29,18 +29,20 @@ ActiveRecord::Schema.define(:version => 20121007014035) do
 
   create_table "projects", :force => true do |t|
     t.integer  "user_id"
-    t.string   "name",        :limit => 64,                 :null => false
-    t.string   "full_name",   :limit => 128,                :null => false
+    t.string   "name",                     :limit => 64,                 :null => false
+    t.string   "full_name",                :limit => 128,                :null => false
     t.text     "description"
     t.string   "git_url"
     t.string   "homepage"
-    t.string   "language",    :limit => 32
-    t.integer  "difficulty",                 :default => 0, :null => false
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.string   "language",                 :limit => 32
+    t.integer  "difficulty",                              :default => 0, :null => false
+    t.datetime "created_at",                                             :null => false
+    t.datetime "updated_at",                                             :null => false
+    t.datetime "seeking_maintainer_since"
   end
 
   add_index "projects", ["name"], :name => "index_projects_on_name"
+  add_index "projects", ["seeking_maintainer_since"], :name => "index_projects_on_seeking_maintainer_since"
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
 
   create_table "users", :force => true do |t|
